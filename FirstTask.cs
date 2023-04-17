@@ -9,6 +9,7 @@ namespace Library
 
     public class ZadanieOne
     {
+        // Добавлен static
         public static void One()
         {
             Console.Write("Введите число N:");
@@ -42,13 +43,15 @@ namespace Library
 
         }
     }
+    //Создан класс Programm с методом Main для выбора между заданиями
     class Program
     {
+        //Добавлен статический метод Main. Без метода Main программа не будет иметь точки входа и не будет запущена
         static void Main(string[] args)
         {
             Console.WriteLine("Выберите задание: 1 или 2");
             int choice = int.Parse(Console.ReadLine());
-
+            // Выбор между заданиями
             switch (choice)
             {
                 case 1:
@@ -61,6 +64,7 @@ namespace Library
                     Console.WriteLine("Некорректный ввод.");
                     break;
             }
+            // Добавлен для того, чтобы при выполнении программа не закрывалась сразу
             Console.ReadKey();
         }
     }
