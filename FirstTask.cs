@@ -1,33 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace Library
 {
+
     public class ZadanieOne
     {
-        public void One()
+        public static void One()
         {
-            Console.Write("Введите число N: ");
+            Console.Write("Введите число N:");
             int n = int.Parse(Console.ReadLine());
             string result = string.Join(", ", Enumerable.Range(1, n));
             Console.WriteLine(result);
+            
         }
+
     }
     public class ZadanieTwo
     {
         public static void Two()
         {
-            Console.Write("Введите нечетное число N: ");
+            Console.Write("Введите нечетное число N:");
             int n = int.Parse(Console.ReadLine());
-            if (n % 2 == 0) // If N is an even number, exit the function.
+            if (n % 2 == 0)
             {
                 Console.WriteLine("Вы ввели четное N.");
                 return;
-            }            
-            for (int row = 1; row <= n; row++) {
-                for (int col = 1; col <= n; col++) {
+            }
+            for (int row = 1; row <= n; row++)
+            {
+                for (int col = 1; col <= n; col++)
+                {
                     if (row == n / 2 + 1 && col == n / 2 + 1) Console.Write(" ");
-                    else Console.Write("#");                    
+                    else Console.Write("#");
                 }
                 Console.WriteLine();
             }
+
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Выберите задание: 1 или 2");
+            int choice = int.Parse(Console.ReadLine());
+
+            switch (choice)
+            {
+                case 1:
+                    ZadanieOne.One();
+                    break;
+                case 2:
+                    ZadanieTwo.Two();
+                    break;
+                default:
+                    Console.WriteLine("Некорректный ввод.");
+                    break;
+            }
+            Console.ReadKey();
         }
     }
 }
